@@ -600,9 +600,14 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
-      #services { grid-template-columns: 1fr; }
+      #services { grid-template-columns: 1fr; gap: 1.5rem; }
       .why-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .nav-links { display: none; }
+      .service-card { padding: 1.6rem 1.4rem; }
+      .service-card.full-width { grid-column: auto; max-width: 100%; }
+      section { padding: 4rem 5%; }
+      #hero { padding: 6rem 5% 4rem; }
+      .why-stats { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
@@ -670,9 +675,11 @@
     <div class="service-card">
       <div class="service-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="3" width="20" height="14" rx="2"/>
-          <path d="M8 21h8M12 17v4"/>
-          <path d="M7 8h10M7 12h6"/>
+          <path d="M5 12V6a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v6"/>
+          <path d="M3 12h18"/>
+          <path d="M12 12v7"/>
+          <path d="M8 19h8"/>
+          <path d="M9 15.5l3 3 3-3"/>
         </svg>
       </div>
       <h3>B2B 3D Printing Service</h3>
@@ -708,11 +715,12 @@
     </div>
 
     <!-- Card 3: Autonomous Systems -->
-    <div class="service-card" style="grid-column: 1 / -1; max-width: 600px;">
+    <div class="service-card full-width" style="grid-column: 1 / -1; max-width: 600px;">
       <div class="service-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="3"/>
-          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+          <path d="M2 17l10 5 10-5"/>
+          <path d="M2 12l10 5 10-5"/>
         </svg>
       </div>
       <h3>Autonomous Vehicle &amp; Drone Development</h3>
