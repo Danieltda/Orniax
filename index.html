@@ -788,7 +788,9 @@
       </div>
 
       <div class="contact-form">
-        <form id="contactForm" onsubmit="handleSubmit(event)">
+        <form id="contactForm" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="bot-field" />
           <div class="form-row">
             <div class="form-group">
               <label for="fname">First Name</label>
@@ -870,16 +872,18 @@
       const form = document.getElementById('contactForm');
       const success = document.getElementById('formSuccess');
       const data = new FormData(form);
-      const subject = encodeURIComponent('Orniax Inquiry: ' + (form.interest.options[form.interest.selectedIndex].text));
-      const body = encodeURIComponent(
-        'Name: ' + data.get('fname') + ' ' + data.get('lname') + '\n' +
-        'Email: ' + data.get('email') + '\n' +
-        'Interest: ' + form.interest.options[form.interest.selectedIndex].text + '\n\n' +
-        data.get('message')
-      );
-      window.location.href = 'mailto:info@orniax.com?subject=' + subject + '&body=' + body;
-      form.style.display = 'none';
-      success.style.display = 'block';
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data).toString()
+      })
+      .then(() => {
+        form.style.display = 'none';
+        success.style.display = 'block';
+      })
+      .catch(() => {
+        alert('Something went wrong. Please email us directly at info@orniax.com');
+      });
     }
   </script>
 </body>
