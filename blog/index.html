@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Orniax | 3D Printing Insights for SMEs</title>
+
+  <meta name="description" content="Insights, guides, and industry perspectives on 3D printing for small and medium enterprises. Learn how additive manufacturing can transform your business." />
+  <meta name="keywords" content="3D printing blog, SME manufacturing, additive manufacturing insights, prototyping tips, 3D printing business" />
+  <meta name="author" content="Orniax" />
+  <link rel="canonical" href="https://www.orniax.com/blog/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.orniax.com/blog/" />
+  <meta property="og:title" content="Blog — Orniax | 3D Printing Insights for SMEs" />
+  <meta property="og:description" content="Insights, guides, and industry perspectives on 3D printing for small and medium enterprises." />
+  <meta property="og:image" content="https://www.orniax.com/orniax-rosegold-falcon-smooth.png" />
+  <meta property="og:site_name" content="Orniax" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Blog — Orniax | 3D Printing Insights for SMEs" />
+  <meta name="twitter:description" content="Insights, guides, and industry perspectives on 3D printing for small and medium enterprises." />
+  <meta name="twitter:image" content="https://www.orniax.com/orniax-rosegold-falcon-smooth.png" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-start:   #FFF5F0;
+      --bg-end:     #FFE8D2;
+      --falcon:     #A05A50;
+      --falcon-dk:  #7A3F35;
+      --falcon-lt:  #C47A6E;
+      --text:       #2A1A17;
+      --muted:      #7A5C56;
+      --border:     rgba(160,90,80,0.15);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(160deg, var(--bg-start) 0%, var(--bg-end) 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 6%;
+      background: rgba(255,245,240,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+    }
+
+    .nav-logo svg { width: 36px; height: 36px; }
+
+    .nav-logo span {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--falcon);
+      letter-spacing: 0.04em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--falcon); }
+    .nav-links a.active { color: var(--falcon); }
+
+    .nav-cta {
+      background: var(--falcon);
+      color: #fff !important;
+      padding: 0.5rem 1.3rem;
+      border-radius: 999px;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--falcon-dk) !important; color: #fff !important; }
+
+    /* ── BLOG LISTING ── */
+    .blog-header {
+      padding: 8rem 6% 3rem;
+      text-align: center;
+    }
+
+    .blog-header h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 0.8rem;
+    }
+
+    .blog-header p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .blog-grid {
+      padding: 2rem 6% 6rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .blog-card {
+      background: rgba(255,255,255,0.55);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(8px);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(160,90,80,0.12);
+    }
+
+    .blog-card .tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--falcon);
+      background: rgba(160,90,80,0.08);
+      border-radius: 999px;
+      padding: 0.25rem 0.8rem;
+      margin-bottom: 1rem;
+      width: fit-content;
+    }
+
+    .blog-card h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.35;
+      margin-bottom: 0.7rem;
+    }
+
+    .blog-card h2 a {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.2s;
+    }
+
+    .blog-card h2 a:hover { color: var(--falcon); }
+
+    .blog-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .blog-card .meta {
+      margin-top: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .blog-card .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--falcon);
+      text-decoration: none;
+      transition: gap 0.2s;
+    }
+
+    .blog-card .read-more:hover { gap: 0.6rem; }
+    .blog-card .read-more svg { width: 14px; height: 14px; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer .f-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+
+    footer .f-logo span {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--falcon);
+      letter-spacing: 0.04em;
+    }
+
+    footer p { font-size: 0.8rem; color: var(--muted); }
+
+    footer .f-links { display: flex; gap: 1.5rem; list-style: none; }
+
+    footer .f-links a {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    footer .f-links a:hover { color: var(--falcon); }
+
+    .social-links { display: flex; gap: 0.8rem; align-items: center; }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+
+    .social-link:hover {
+      border-color: var(--falcon);
+      color: var(--falcon);
+      background: rgba(160,90,80,0.06);
+    }
+
+    .social-link svg { width: 16px; height: 16px; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="../" class="nav-logo">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="32,4 52,24 44,28 56,48 32,36 8,48 20,28 12,24" fill="#A05A50" opacity="0.15"/>
+        <polygon points="32,8 48,26 40,29 50,46 32,34 14,46 24,29 16,26" fill="none" stroke="#A05A50" stroke-width="2"/>
+        <polygon points="32,14 42,28 32,24 22,28" fill="#A05A50"/>
+        <circle cx="32" cy="22" r="3" fill="#A05A50"/>
+      </svg>
+      <span>ORNIAX</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../#services">Services</a></li>
+      <li><a href="../#why">About</a></li>
+      <li><a href="./" class="active">Blog</a></li>
+      <li><a href="../#cta" class="nav-cta">Get in Touch</a></li>
+    </ul>
+  </nav>
+
+  <!-- BLOG HEADER -->
+  <div class="blog-header">
+    <h1>Insights &amp; Guides</h1>
+    <p>Practical knowledge on 3D printing, additive manufacturing, and how SMEs can leverage modern production to compete and grow.</p>
+  </div>
+
+  <!-- BLOG GRID -->
+  <div class="blog-grid">
+
+    <!-- Article 1 -->
+    <article class="blog-card">
+      <span class="tag">Guide</span>
+      <h2><a href="3d-printing-reduce-prototyping-costs-sme.html">How 3D Printing Helps SMEs Reduce Prototyping Costs by Up to 70%</a></h2>
+      <p>Traditional prototyping can cost thousands and take weeks. Learn how small and medium businesses are using 3D printing to iterate faster, cut tooling expenses, and bring products to market sooner.</p>
+      <div class="meta">
+        <span>March 24, 2026</span>
+        <a href="3d-printing-reduce-prototyping-costs-sme.html" class="read-more">
+          Read article
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- Article 2 (placeholder) -->
+    <article class="blog-card">
+      <span class="tag">Comparison</span>
+      <h2>FDM vs SLA: Which 3D Printing Method Is Right for Your Business?</h2>
+      <p>Not all 3D printing is the same. We break down the two most popular technologies — FDM and SLA — so you can choose the right one for your parts, budget, and timeline.</p>
+      <div class="meta">
+        <span>Coming soon</span>
+      </div>
+    </article>
+
+    <!-- Article 3 (placeholder) -->
+    <article class="blog-card">
+      <span class="tag">Industry</span>
+      <h2>5 Ways SMEs Are Using 3D Printing in 2026</h2>
+      <p>From custom tooling to end-use parts, small businesses across Europe are finding creative ways to integrate additive manufacturing into their workflows.</p>
+      <div class="meta">
+        <span>Coming soon</span>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="../" class="f-logo">
+      <svg width="28" height="28" viewBox="0 0 64 64" fill="none">
+        <polygon points="32,8 48,26 40,29 50,46 32,34 14,46 24,29 16,26" fill="none" stroke="#A05A50" stroke-width="2"/>
+        <polygon points="32,14 42,28 32,24 22,28" fill="#A05A50"/>
+      </svg>
+      <span>ORNIAX</span>
+    </a>
+    <p>&copy; 2026 Orniax. Netherlands. Built by makers. Driven by mission.</p>
+    <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
+      <ul class="f-links">
+        <li><a href="../#services">Services</a></li>
+        <li><a href="../#why">About</a></li>
+        <li><a href="mailto:info@orniax.com">Contact</a></li>
+      </ul>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/company/orniax/?viewAsMember=true" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://www.instagram.com/ornia_x/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
