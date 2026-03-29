@@ -1,0 +1,240 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Radial mask: visible in corners, transparent in center -->
+    <radialGradient id="centerFade" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="white" stop-opacity="0"/>
+      <stop offset="25%" stop-color="white" stop-opacity="0.1"/>
+      <stop offset="50%" stop-color="white" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="white" stop-opacity="1"/>
+    </radialGradient>
+    <mask id="cornerMask">
+      <rect width="1920" height="1080" fill="url(#centerFade)"/>
+    </mask>
+
+    <!-- Lighter mask for subtle elements -->
+    <radialGradient id="centerFadeLight" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="white" stop-opacity="0"/>
+      <stop offset="30%" stop-color="white" stop-opacity="0.1"/>
+      <stop offset="60%" stop-color="white" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0.85"/>
+    </radialGradient>
+    <mask id="cornerMaskLight">
+      <rect width="1920" height="1080" fill="url(#centerFadeLight)"/>
+    </mask>
+  </defs>
+
+  <g mask="url(#cornerMask)" opacity="0.35" stroke="#1A5C5A" fill="none">
+    <!-- ══ BOTTOM-LEFT: Perspective grid ══ -->
+    <!-- Horizontal perspective lines -->
+    <line x1="0" y1="1080" x2="600" y2="780" stroke-width="0.8"/>
+    <line x1="0" y1="1020" x2="550" y2="750" stroke-width="0.7"/>
+    <line x1="0" y1="960" x2="500" y2="720" stroke-width="0.6"/>
+    <line x1="0" y1="900" x2="450" y2="690" stroke-width="0.5"/>
+    <line x1="0" y1="840" x2="400" y2="660" stroke-width="0.4"/>
+    <line x1="0" y1="780" x2="350" y2="630" stroke-width="0.3"/>
+
+    <!-- Vertical perspective lines from bottom-left -->
+    <line x1="0" y1="1080" x2="200" y2="650" stroke-width="0.8"/>
+    <line x1="80" y1="1080" x2="260" y2="670" stroke-width="0.7"/>
+    <line x1="160" y1="1080" x2="320" y2="690" stroke-width="0.6"/>
+    <line x1="240" y1="1080" x2="380" y2="710" stroke-width="0.5"/>
+    <line x1="320" y1="1080" x2="440" y2="730" stroke-width="0.4"/>
+    <line x1="400" y1="1080" x2="500" y2="750" stroke-width="0.3"/>
+
+    <!-- ══ TOP-RIGHT: Perspective grid ══ -->
+    <line x1="1920" y1="0" x2="1320" y2="300" stroke-width="0.8"/>
+    <line x1="1920" y1="60" x2="1370" y2="330" stroke-width="0.7"/>
+    <line x1="1920" y1="120" x2="1420" y2="360" stroke-width="0.6"/>
+    <line x1="1920" y1="180" x2="1470" y2="390" stroke-width="0.5"/>
+    <line x1="1920" y1="240" x2="1520" y2="420" stroke-width="0.4"/>
+
+    <line x1="1920" y1="0" x2="1720" y2="430" stroke-width="0.8"/>
+    <line x1="1840" y1="0" x2="1660" y2="410" stroke-width="0.7"/>
+    <line x1="1760" y1="0" x2="1600" y2="390" stroke-width="0.6"/>
+    <line x1="1680" y1="0" x2="1540" y2="370" stroke-width="0.5"/>
+    <line x1="1600" y1="0" x2="1480" y2="350" stroke-width="0.4"/>
+
+    <!-- ══ BOTTOM-RIGHT: Perspective grid ══ -->
+    <line x1="1920" y1="1080" x2="1400" y2="800" stroke-width="0.7"/>
+    <line x1="1920" y1="1020" x2="1450" y2="780" stroke-width="0.6"/>
+    <line x1="1920" y1="960" x2="1500" y2="760" stroke-width="0.5"/>
+    <line x1="1920" y1="900" x2="1550" y2="740" stroke-width="0.4"/>
+
+    <line x1="1920" y1="1080" x2="1750" y2="680" stroke-width="0.7"/>
+    <line x1="1820" y1="1080" x2="1680" y2="710" stroke-width="0.6"/>
+    <line x1="1720" y1="1080" x2="1610" y2="740" stroke-width="0.5"/>
+    <line x1="1620" y1="1080" x2="1540" y2="770" stroke-width="0.4"/>
+  </g>
+
+  <!-- ══ FLOWING WAVE CURVES ══ -->
+  <g mask="url(#cornerMask)" opacity="0.30" stroke="#1A5C5A" fill="none" stroke-width="1">
+    <!-- Bottom-left waves -->
+    <path d="M0,900 Q200,850 350,870 T600,820 T800,860" stroke-width="1.2"/>
+    <path d="M0,940 Q180,890 320,920 T580,870 T750,910" stroke-width="0.9"/>
+    <path d="M0,980 Q160,940 300,960 T550,920 T700,950" stroke-width="0.7"/>
+
+    <!-- Top-right waves -->
+    <path d="M1920,180 Q1720,150 1570,170 T1320,140 T1120,180" stroke-width="1.2"/>
+    <path d="M1920,130 Q1740,100 1600,120 T1370,90 T1170,130" stroke-width="0.9"/>
+    <path d="M1920,80 Q1760,55 1630,70 T1420,45 T1220,80" stroke-width="0.7"/>
+
+    <!-- Bottom-right waves -->
+    <path d="M1920,920 Q1750,880 1600,900 T1380,870 T1200,910" stroke-width="1"/>
+    <path d="M1920,960 Q1770,930 1640,945 T1430,920 T1260,950" stroke-width="0.7"/>
+
+    <!-- Top-left subtle wave -->
+    <path d="M0,150 Q200,120 380,140 T600,110 T780,145" stroke-width="0.8"/>
+    <path d="M0,100 Q180,75 340,90 T560,65 T720,95" stroke-width="0.6"/>
+  </g>
+
+  <!-- ══ MESH / CONNECTED NODES ══ -->
+  <g mask="url(#cornerMask)" opacity="0.28" stroke="#1A5C5A" fill="#1A5C5A">
+    <!-- Bottom-left mesh -->
+    <circle cx="60" cy="920" r="2.5"/>
+    <circle cx="140" cy="880" r="2"/>
+    <circle cx="100" cy="960" r="1.8"/>
+    <circle cx="220" cy="910" r="2.2"/>
+    <circle cx="180" cy="980" r="1.5"/>
+    <circle cx="300" cy="870" r="2"/>
+    <circle cx="280" cy="950" r="1.8"/>
+    <circle cx="350" cy="920" r="1.5"/>
+    <circle cx="50" cy="850" r="1.5"/>
+    <circle cx="160" cy="830" r="1.8"/>
+    <line x1="60" y1="920" x2="140" y2="880" stroke-width="0.5" fill="none"/>
+    <line x1="140" y1="880" x2="220" y2="910" stroke-width="0.5" fill="none"/>
+    <line x1="100" y1="960" x2="180" y2="980" stroke-width="0.5" fill="none"/>
+    <line x1="220" y1="910" x2="300" y2="870" stroke-width="0.5" fill="none"/>
+    <line x1="60" y1="920" x2="100" y2="960" stroke-width="0.4" fill="none"/>
+    <line x1="140" y1="880" x2="100" y2="960" stroke-width="0.4" fill="none"/>
+    <line x1="220" y1="910" x2="280" y2="950" stroke-width="0.4" fill="none"/>
+    <line x1="300" y1="870" x2="350" y2="920" stroke-width="0.4" fill="none"/>
+    <line x1="280" y1="950" x2="350" y2="920" stroke-width="0.4" fill="none"/>
+    <line x1="50" y1="850" x2="60" y2="920" stroke-width="0.4" fill="none"/>
+    <line x1="50" y1="850" x2="140" y2="880" stroke-width="0.3" fill="none"/>
+    <line x1="50" y1="850" x2="160" y2="830" stroke-width="0.4" fill="none"/>
+    <line x1="160" y1="830" x2="300" y2="870" stroke-width="0.3" fill="none"/>
+
+    <!-- Top-right mesh -->
+    <circle cx="1860" cy="80" r="2.5"/>
+    <circle cx="1780" cy="120" r="2"/>
+    <circle cx="1820" cy="50" r="1.8"/>
+    <circle cx="1700" cy="90" r="2.2"/>
+    <circle cx="1740" cy="30" r="1.5"/>
+    <circle cx="1620" cy="130" r="2"/>
+    <circle cx="1650" cy="60" r="1.8"/>
+    <circle cx="1560" cy="100" r="1.5"/>
+    <circle cx="1870" cy="160" r="1.5"/>
+    <circle cx="1760" cy="180" r="1.8"/>
+    <line x1="1860" y1="80" x2="1780" y2="120" stroke-width="0.5" fill="none"/>
+    <line x1="1780" y1="120" x2="1700" y2="90" stroke-width="0.5" fill="none"/>
+    <line x1="1820" y1="50" x2="1740" y2="30" stroke-width="0.5" fill="none"/>
+    <line x1="1700" y1="90" x2="1620" y2="130" stroke-width="0.5" fill="none"/>
+    <line x1="1860" y1="80" x2="1820" y2="50" stroke-width="0.4" fill="none"/>
+    <line x1="1780" y1="120" x2="1820" y2="50" stroke-width="0.4" fill="none"/>
+    <line x1="1700" y1="90" x2="1650" y2="60" stroke-width="0.4" fill="none"/>
+    <line x1="1620" y1="130" x2="1560" y2="100" stroke-width="0.4" fill="none"/>
+    <line x1="1650" y1="60" x2="1560" y2="100" stroke-width="0.4" fill="none"/>
+    <line x1="1870" y1="160" x2="1860" y2="80" stroke-width="0.4" fill="none"/>
+    <line x1="1870" y1="160" x2="1780" y2="120" stroke-width="0.3" fill="none"/>
+    <line x1="1870" y1="160" x2="1760" y2="180" stroke-width="0.4" fill="none"/>
+    <line x1="1760" y1="180" x2="1620" y2="130" stroke-width="0.3" fill="none"/>
+
+    <!-- Bottom-right mesh -->
+    <circle cx="1850" cy="950" r="2"/>
+    <circle cx="1770" cy="920" r="2.2"/>
+    <circle cx="1810" cy="990" r="1.5"/>
+    <circle cx="1690" cy="960" r="1.8"/>
+    <circle cx="1730" cy="1010" r="1.5"/>
+    <circle cx="1620" cy="930" r="1.8"/>
+    <line x1="1850" y1="950" x2="1770" y2="920" stroke-width="0.5" fill="none"/>
+    <line x1="1770" y1="920" x2="1690" y2="960" stroke-width="0.5" fill="none"/>
+    <line x1="1850" y1="950" x2="1810" y2="990" stroke-width="0.4" fill="none"/>
+    <line x1="1810" y1="990" x2="1730" y2="1010" stroke-width="0.4" fill="none"/>
+    <line x1="1690" y1="960" x2="1620" y2="930" stroke-width="0.4" fill="none"/>
+    <line x1="1770" y1="920" x2="1810" y2="990" stroke-width="0.3" fill="none"/>
+  </g>
+
+  <!-- ══ HALFTONE DOTS ══ -->
+  <g mask="url(#cornerMask)" fill="#1A5C5A" opacity="0.22">
+    <!-- Bottom-left halftone cluster -->
+    <circle cx="30" cy="1050" r="4"/><circle cx="55" cy="1045" r="3.5"/><circle cx="80" cy="1055" r="3"/>
+    <circle cx="105" cy="1040" r="2.8"/><circle cx="130" cy="1050" r="2.5"/><circle cx="155" cy="1038" r="2.2"/>
+    <circle cx="25" cy="1020" r="3.5"/><circle cx="50" cy="1015" r="3"/><circle cx="75" cy="1025" r="2.5"/>
+    <circle cx="100" cy="1010" r="2.2"/><circle cx="125" cy="1022" r="2"/><circle cx="150" cy="1008" r="1.8"/>
+    <circle cx="20" cy="990" r="3"/><circle cx="45" cy="985" r="2.5"/><circle cx="70" cy="995" r="2"/>
+    <circle cx="95" cy="982" r="1.8"/><circle cx="120" cy="992" r="1.5"/>
+    <circle cx="15" cy="960" r="2.5"/><circle cx="40" cy="955" r="2"/><circle cx="65" cy="965" r="1.5"/>
+    <circle cx="180" cy="1048" r="2"/><circle cx="205" cy="1042" r="1.8"/><circle cx="230" cy="1052" r="1.5"/>
+    <circle cx="175" cy="1018" r="1.5"/><circle cx="200" cy="1012" r="1.2"/>
+
+    <!-- Top-right halftone cluster -->
+    <circle cx="1890" cy="30" r="4"/><circle cx="1865" cy="35" r="3.5"/><circle cx="1840" cy="25" r="3"/>
+    <circle cx="1815" cy="40" r="2.8"/><circle cx="1790" cy="30" r="2.5"/><circle cx="1765" cy="42" r="2.2"/>
+    <circle cx="1895" cy="60" r="3.5"/><circle cx="1870" cy="65" r="3"/><circle cx="1845" cy="55" r="2.5"/>
+    <circle cx="1820" cy="68" r="2.2"/><circle cx="1795" cy="58" r="2"/><circle cx="1770" cy="70" r="1.8"/>
+    <circle cx="1900" cy="90" r="3"/><circle cx="1875" cy="95" r="2.5"/><circle cx="1850" cy="85" r="2"/>
+    <circle cx="1825" cy="98" r="1.8"/><circle cx="1800" cy="88" r="1.5"/>
+    <circle cx="1905" cy="120" r="2.5"/><circle cx="1880" cy="125" r="2"/><circle cx="1855" cy="115" r="1.5"/>
+    <circle cx="1740" cy="32" r="2"/><circle cx="1715" cy="38" r="1.8"/><circle cx="1690" cy="28" r="1.5"/>
+
+    <!-- Bottom-right halftone -->
+    <circle cx="1890" cy="1050" r="3.5"/><circle cx="1865" cy="1040" r="3"/><circle cx="1840" cy="1055" r="2.5"/>
+    <circle cx="1815" cy="1042" r="2.2"/><circle cx="1790" cy="1052" r="2"/>
+    <circle cx="1895" cy="1020" r="3"/><circle cx="1870" cy="1015" r="2.5"/><circle cx="1845" cy="1025" r="2"/>
+    <circle cx="1900" cy="990" r="2.5"/><circle cx="1875" cy="985" r="2"/>
+
+    <!-- Top-left halftone -->
+    <circle cx="30" cy="30" r="3.5"/><circle cx="55" cy="25" r="3"/><circle cx="80" cy="35" r="2.5"/>
+    <circle cx="105" cy="22" r="2.2"/><circle cx="130" cy="32" r="2"/>
+    <circle cx="25" cy="60" r="3"/><circle cx="50" cy="55" r="2.5"/><circle cx="75" cy="65" r="2"/>
+    <circle cx="20" cy="90" r="2.5"/><circle cx="45" cy="85" r="2"/>
+  </g>
+
+  <!-- ══ GEOMETRIC ACCENTS (hexagons, triangles) ══ -->
+  <g mask="url(#cornerMaskLight)" opacity="0.20" stroke="#1A5C5A" fill="none" stroke-width="0.8">
+    <!-- Bottom-left hexagon -->
+    <polygon points="120,1000 140,988 160,1000 160,1020 140,1032 120,1020"/>
+    <!-- Smaller nested -->
+    <polygon points="130,1004 140,998 150,1004 150,1016 140,1022 130,1016" stroke-width="0.5"/>
+
+    <!-- Top-right hexagon -->
+    <polygon points="1760,60 1780,48 1800,60 1800,80 1780,92 1760,80"/>
+    <polygon points="1770,64 1780,58 1790,64 1790,76 1780,82 1770,76" stroke-width="0.5"/>
+
+    <!-- Small triangles scattered -->
+    <polygon points="400,1020 410,1000 420,1020" stroke-width="0.5"/>
+    <polygon points="1520,50 1530,30 1540,50" stroke-width="0.5"/>
+    <polygon points="1700,980 1710,965 1720,980" stroke-width="0.5"/>
+    <polygon points="80,120 90,100 100,120" stroke-width="0.5"/>
+
+    <!-- Circles / rings -->
+    <circle cx="250" cy="1030" r="12" stroke-width="0.6"/>
+    <circle cx="250" cy="1030" r="6" stroke-width="0.4"/>
+    <circle cx="1670" cy="40" r="12" stroke-width="0.6"/>
+    <circle cx="1670" cy="40" r="6" stroke-width="0.4"/>
+  </g>
+
+  <!-- ══ VERY FINE GRID OVERLAY (subtle) ══ -->
+  <g mask="url(#cornerMask)" opacity="0.12" stroke="#1A5C5A" stroke-width="0.5">
+    <!-- Horizontal lines -->
+    <line x1="0" y1="108" x2="1920" y2="108"/>
+    <line x1="0" y1="216" x2="1920" y2="216"/>
+    <line x1="0" y1="324" x2="1920" y2="324"/>
+    <line x1="0" y1="432" x2="1920" y2="432"/>
+    <line x1="0" y1="540" x2="1920" y2="540"/>
+    <line x1="0" y1="648" x2="1920" y2="648"/>
+    <line x1="0" y1="756" x2="1920" y2="756"/>
+    <line x1="0" y1="864" x2="1920" y2="864"/>
+    <line x1="0" y1="972" x2="1920" y2="972"/>
+    <!-- Vertical lines -->
+    <line x1="192" y1="0" x2="192" y2="1080"/>
+    <line x1="384" y1="0" x2="384" y2="1080"/>
+    <line x1="576" y1="0" x2="576" y2="1080"/>
+    <line x1="768" y1="0" x2="768" y2="1080"/>
+    <line x1="960" y1="0" x2="960" y2="1080"/>
+    <line x1="1152" y1="0" x2="1152" y2="1080"/>
+    <line x1="1344" y1="0" x2="1344" y2="1080"/>
+    <line x1="1536" y1="0" x2="1536" y2="1080"/>
+    <line x1="1728" y1="0" x2="1728" y2="1080"/>
+  </g>
+</svg>
