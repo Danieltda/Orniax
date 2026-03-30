@@ -725,10 +725,12 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       /* Scale wireframe SVG to near-original size anchored to top-right corner.
-         Default "cover" shows only the center strip where the radial mask hides everything. */
+         Default "cover" shows only the center strip where the radial mask hides everything.
+         Opacity reduced so the dense corner lines don't overwhelm the nav area. */
       body::before {
         background-size: 500% auto;
         background-position: right top;
+        opacity: 0.5;
       }
       #services { grid-template-columns: 1fr; gap: 1.5rem; }
       .why-inner { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -748,7 +750,7 @@
         top: 0; left: 0; right: 0;
         background: rgba(240,247,247,0.97);
         backdrop-filter: blur(12px);
-        padding: 5rem 6% 2rem;
+        padding: 5rem 6% 3rem;
         transform: translateY(-110%);
         transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
         z-index: 99;
@@ -768,9 +770,16 @@
       }
 
       .nav-cta {
-        display: inline-block;
-        margin-top: 0.5rem;
-        padding: 0.6rem 1.5rem !important;
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: 1.5rem;
+        padding: 0.9rem 1.5rem !important;
+        box-sizing: border-box;
+      }
+
+      .nav-links li:last-child {
+        border-bottom: none;
       }
     }
   </style>
