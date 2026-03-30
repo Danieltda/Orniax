@@ -696,16 +696,82 @@
 
     .social-link svg { width: 16px; height: 16px; }
 
+    /* ── HAMBURGER ── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.4rem;
+      z-index: 101;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
+      /* Scale wireframe SVG to near-original size anchored to top-right corner.
+         Default "cover" shows only the center strip where the radial mask hides everything. */
+      body::before {
+        background-size: 500% auto;
+        background-position: right top;
+      }
       #services { grid-template-columns: 1fr; gap: 1.5rem; }
       .why-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-      .nav-links { display: none; }
       .service-card { padding: 1.6rem 1.4rem; }
       .service-card.full-width { grid-column: auto; max-width: 100%; }
       section { padding: 4rem 5%; }
       #hero { padding: 6rem 5% 4rem; }
       .why-stats { grid-template-columns: 1fr 1fr; }
+
+      .nav-hamburger { display: flex; }
+
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        background: rgba(240,247,247,0.97);
+        backdrop-filter: blur(12px);
+        padding: 5rem 6% 2rem;
+        transform: translateY(-110%);
+        transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+        z-index: 99;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links.open { transform: translateY(0); }
+
+      .nav-links li {
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 1rem 0;
+        font-size: 1rem;
+      }
+
+      .nav-cta {
+        display: inline-block;
+        margin-top: 0.5rem;
+        padding: 0.6rem 1.5rem !important;
+      }
     }
   </style>
 </head>
@@ -723,6 +789,9 @@
       </svg>
       <span>ORNIAX</span>
     </a>
+    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#why">About</a></li>
@@ -985,6 +1054,25 @@
         alert('Something went wrong. Please email us directly at info@orniax.com');
       });
     }
+  </script>
+
+  <script>
+    const hamburger = document.querySelector('.nav-hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', false);
+      });
+    });
   </script>
 </body>
 </html>
