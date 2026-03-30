@@ -1,0 +1,28 @@
+[build]
+  publish = "."
+
+# Disable pretty URLs so .html extensions are served as-is.
+# Without this Netlify redirects /foo.html → /foo, which adds an extra
+# hop on top of the www redirect and causes GSC "redirect error".
+[build.processing.html]
+  pretty_urls = false
+
+# Force all traffic to https://www.orniax.com (primary domain).
+# Handles: http → https  AND  non-www → www in a single 301.
+[[redirects]]
+  from   = "https://orniax.com/*"
+  to     = "https://www.orniax.com/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "http://orniax.com/*"
+  to     = "https://www.orniax.com/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "http://www.orniax.com/*"
+  to     = "https://www.orniax.com/:splat"
+  status = 301
+  force  = true
