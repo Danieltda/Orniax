@@ -51,6 +51,21 @@
   }
   </script>
 
+  <!-- Structured Data: Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.orniax.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.orniax.com/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "How 3D Printing Helps SMEs Reduce Prototyping Costs by Up to 70%" }
+    ]
+  }
+  </script>
+
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -364,7 +379,7 @@
   <!-- NAV -->
   <nav>
     <a href="../" class="nav-logo">
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Orniax logo">
         <polygon points="32,4 52,24 44,28 56,48 32,36 8,48 20,28 12,24" fill="#1A5C5A" opacity="0.15"/>
         <polygon points="32,8 48,26 40,29 50,46 32,34 14,46 24,29 16,26" fill="none" stroke="#1A5C5A" stroke-width="2"/>
         <polygon points="32,14 42,28 32,24 22,28" fill="#1A5C5A"/>
@@ -479,7 +494,7 @@
   <!-- FOOTER -->
   <footer>
     <a href="../" class="f-logo">
-      <svg width="28" height="28" viewBox="0 0 64 64" fill="none">
+      <svg width="28" height="28" viewBox="0 0 64 64" fill="none" role="img" aria-label="Orniax logo">
         <polygon points="32,8 48,26 40,29 50,46 32,34 14,46 24,29 16,26" fill="none" stroke="#1A5C5A" stroke-width="2"/>
         <polygon points="32,14 42,28 32,24 22,28" fill="#1A5C5A"/>
       </svg>
